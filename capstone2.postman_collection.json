@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "31385308-9106-440c-ba88-6d2d77304464",
+		"name": "capstone2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"tej\",\r\n    \"email\": \"tej@gmail.com\",\r\n    \"mobile\": \"8885496459\",\r\n    \"password\": \"rakshanTej\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/register",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"tej@gmail.com\",\r\n    \"password\": \"rakshanTej\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/login",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product (Only Admin)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGI0MjVhYmE3NzI2ZWZmNjRjMGQ5MSIsImVtYWlsIjoicmFrc2hhbkBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2Nzg0NjA2Njh9.QiuNE6VaOEKICzDhHNFlPTpYC0_MpDiJ411zRTWbGIA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Car\",\r\n    \"description\": \"Its a car\",\r\n    \"price\": 400000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/products/create",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all active Products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGIzZjBjMmM3NDg0ZWFlNzUzZWMwYiIsImVtYWlsIjoiZGF2aWRAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjc4NDU4ODY2fQ.w8_A13REJpZ4VKKVygXRQQEKOnCM-fcFh8L2wmf9fK0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/products/activeProducts",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"products",
+						"activeProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve single product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGIzOWJkOWU1YmNhZDgwZWMxMjcwOCIsImVtYWlsIjoicmFrQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3ODQ1NzUzNX0.E8Yol6GbMzXmbGLJYYAzHG_FeTxUtwtrSnvo8MXB9aI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Car\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/products/getProduct",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"products",
+						"getProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product (Admin only)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGIzOWJkOWU1YmNhZDgwZWMxMjcwOCIsImVtYWlsIjoicmFrQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3ODQ1NzUzNX0.E8Yol6GbMzXmbGLJYYAzHG_FeTxUtwtrSnvo8MXB9aI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Car\",\r\n    \"description\": \"It's a racing car with the maximum mileage\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/products/update",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"products",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Archive product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGIzOWJkOWU1YmNhZDgwZWMxMjcwOCIsImVtYWlsIjoicmFrQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3ODQ1NzUzNX0.E8Yol6GbMzXmbGLJYYAzHG_FeTxUtwtrSnvo8MXB9aI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Car\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/products/archive",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"products",
+						"archive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrive User details (Admin only)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGI0MjVhYmE3NzI2ZWZmNjRjMGQ5MSIsImVtYWlsIjoicmFrc2hhbkBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2Nzg0NjA2Njh9.QiuNE6VaOEKICzDhHNFlPTpYC0_MpDiJ411zRTWbGIA",
+						"type": "default"
+					},
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGI0ZGMyM2IzNzQ2ZDRkZGJiYmMwZiIsImVtYWlsIjoidGVqQGdtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2Nzg0NjI0OTB9.Mv4I_9fwQyl_idEIoQF5_WHTrbBIzYMJCUnfM49JIg8",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/users/userDetails",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"userDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Non-admin User checkout (Create Order)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGIzOWJkOWU1YmNhZDgwZWMxMjcwOCIsImVtYWlsIjoicmFrQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3ODQ1NzUzNX0.E8Yol6GbMzXmbGLJYYAzHG_FeTxUtwtrSnvo8MXB9aI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"productName\": \"Car\",\r\n        \"quantity\": 2\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/users/createOrder",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Product (Admin Only)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGI0MjVhYmE3NzI2ZWZmNjRjMGQ5MSIsImVtYWlsIjoicmFrc2hhbkBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2Nzg0NjA2Njh9.QiuNE6VaOEKICzDhHNFlPTpYC0_MpDiJ411zRTWbGIA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Car\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce-booking-api.onrender.com/products/activate",
+					"protocol": "https",
+					"host": [
+						"e-commerce-booking-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"products",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
